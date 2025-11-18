@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dynamic AdBlock</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Dynamic AdBlock</h1>
+    <div class="status">Rules: <span id="ruleCount">0</span></div>
+
+    <form id="addForm">
+      <input id="urlFilter" placeholder="url filter (e.g. ||doubleclick.net^)" required />
+      <select id="ruleType">
+        <option value="block">Block</option>
+        <option value="allow">Allow</option>
+      </select>
+      <button id="addBtn" type="submit">Add</button>
+    </form>
+
+    <div id="rulesList" class="rules"></div>
+
+    <div class="footer">
+      <button id="openOptions">Options</button>
+      <button id="clearBtn">Clear All</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

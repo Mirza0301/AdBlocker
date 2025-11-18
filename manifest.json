@@ -1,0 +1,29 @@
+{
+  "name": "Dynamic AdBlock - Core + UI",
+  "version": "0.2",
+  "manifest_version": 3,
+  "description": "Dynamic blocking engine with a simple UI (popup + options).",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Dynamic AdBlock",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "ruleset_default",
+      "enabled": true,
+      "path": "static_rules.json"
+    }]
+  }
+}
